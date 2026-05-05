@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="hero-section">
+
+    <!-- floating shapes -->
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+
+    <div class="hero-card">
+
+        <h1>
+            <span class="hero-white">Find & Recover</span>
+            <span class="hero-dark">With Ease</span>
+        </h1>
+
+        <p>Smart and secure Lost & Found platform</p>
+
+        <div class="hero-buttons">
+            <a href="/add/?type=lost" class="btn-dark">Report Lost</a>
+            <a href="/add/?type=found" class="btn-light">Report Found</a>
+        </div>
+
+    </div>
+
+</section>
+<section class="preview-section">
+
+    <h2 class="preview-title">Recently Reported Items</h2>
+
+    <div class="preview-grid">
+
+        <!-- Lost iPhone -->
+        <div class="preview-card">
+            <div class="preview-badge lost">Lost</div>
+            <h4>iPhone 14 Pro</h4>
+            <p>Last seen near cafeteria</p>
+        </div>
+
+        <!-- Found AirPods -->
+        <div class="preview-card">
+            <div class="preview-badge found">Found</div>
+            <h4>AirPods</h4>
+            <p>Found in library</p>
+        </div>
+
+        <!-- Lost Backpack -->
+        <div class="preview-card">
+            <div class="preview-badge lost">Lost</div>
+            <h4>Black Backpack</h4>
+            <p>Lost near main entrance</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section class="features-section">
+    <div class="features-container">
+
+        <div class="feature-box">
+            <h3>Smart Filtering</h3>
+            <p>Find items by category and location instantly.</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>Secure Claims</h3>
+            <p>Only registered users can claim items safely.</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>Real-time Updates</h3>
+            <p>See newly posted items immediately.</p>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

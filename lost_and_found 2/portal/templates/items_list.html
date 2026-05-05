@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="items-section">
+
+    <div class="items-header">
+        <h1 class="items-title">{{ page_title }}</h1>
+
+        <form method="GET" class="modern-filter">
+            <select name="category">
+                <option value="">All categories</option>
+                <option value="electronics">Electronics</option>
+                <option value="clothes">Clothes</option>
+                <option value="documents">Documents</option>
+                <option value="other">Other</option>
+            </select>
+            <button type="submit">Apply</button>
+        </form>
+    </div>
+
+    <div class="modern-items-grid">
+
+        {% for item in items %}
+        <div class="modern-item-card">
+
+            {% if item.images.all %}
+            <div class="modern-card-image">
+                <img src="{{ item.images.first.image.url }}" alt="{{ item.title }}">
+            </div>
+            {% endif %}
+
+            <div class="modern-card-content">
+                <h3>{{ item.title }}</h3>
+
+                <div class="modern-meta">
+                    <span>{{ item.category }}</span>
+                    <span>{{ item.location }}</span>
+                </div>
+
+                <a href="/claim/{{ item.id }}/" class="modern-claim-btn">
+                    Claim Item
+                </a>
+            </div>
+
+        </div>
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="dashboard-section">
+
+    <div class="dashboard-header">
+        <h1>📊 Dashboard</h1>
+        <a href="/add/" class="dashboard-add-btn">+ Add New Item</a>
+    </div>
+
+    <div class="dashboard-stats">
+
+        <div class="stat-card">
+            <h2>{{ items_count }}</h2>
+            <p>Total Items</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>{{ claims_count }}</h2>
+            <p>Claim Requests</p>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

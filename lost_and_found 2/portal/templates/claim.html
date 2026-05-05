@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="claim-container">
+    <div class="claim-card">
+        <h2>Claim: {{ item.title }}</h2>
+
+        <p class="claim-subtitle">
+            Explain why this item belongs to you.
+        </p>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <textarea name="message"
+                      placeholder="Describe details that prove this item is yours..."
+                      required></textarea>
+
+            <button type="submit" class="claim-btn">
+                Send Claim
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

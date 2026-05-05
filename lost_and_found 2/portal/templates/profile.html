@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="profile-section">
+
+    <div class="profile-card">
+
+        <h2>👤 {{ user.username }}</h2>
+
+        <div class="profile-stats">
+            <div>
+                <strong>{{ user_items.count }}</strong>
+                <p>Your Items</p>
+            </div>
+
+            <div>
+                <strong>{{ user_claims.count }}</strong>
+                <p>Your Claims</p>
+            </div>
+        </div>
+
+        <h3>Your Reported Items</h3>
+
+        <div class="profile-items">
+            {% for item in user_items %}
+                <div class="mini-item">
+                    <strong>{{ item.title }}</strong>
+                    <span>{{ item.item_type|title }}</span>
+                </div>
+            {% empty %}
+                <p>No items yet.</p>
+            {% endfor %}
+        </div>
+
+    <form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit" class="logout-btn">
+        Logout
+    </button>
+    </form>
+
+
+    </div>
+
+</section>
+
+{% endblock %}

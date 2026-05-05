@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="auth-section">
+
+    <div class="auth-card">
+
+        <h2 class="auth-title">✨ Create Account</h2>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <!-- USERNAME -->
+            <div class="form-group">
+                <label>Username</label>
+                {{ form.username }}
+                {% for error in form.username.errors %}
+                    <p class="form-error">{{ error }}</p>
+                {% endfor %}
+            </div>
+
+            <!-- PASSWORD -->
+    <div class="form-group">
+    <label>Password</label>
+    {{ form.password1 }}
+
+    <div class="password-hint">
+        Password must:
+        <ul>
+            <li>Be at least 8 characters long</li>
+            <li>Contain letters and numbers</li>
+            <li>Not be too common</li>
+            <li>Not be entirely numeric</li>
+        </ul>
+    </div>
+
+    {% for error in form.password1.errors %}
+        <p class="form-error">{{ error }}</p>
+    {% endfor %}
+    </div>
+
+
+            <!-- CONFIRM PASSWORD -->
+            <div class="form-group">
+                <label>Confirm Password</label>
+                {{ form.password2 }}
+                {% for error in form.password2.errors %}
+                    <p class="form-error">{{ error }}</p>
+                {% endfor %}
+            </div>
+
+            <button class="auth-btn">
+                Create Account
+            </button>
+
+        </form>
+
+        <p class="auth-switch">
+            Already have an account?
+            <a href="/login/">Login</a>
+        </p>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="form-section">
+
+    <div class="form-card">
+
+        <h2 class="form-title">
+            📦 Report Item
+        </h2>
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <!-- TYPE SELECT -->
+            <div class="form-group">
+    <label>Item Type</label>
+    <select name="item_type" required>
+
+        <!-- Placeholder -->
+        <option value="" disabled
+            {% if not request.GET.type %}
+                selected
+            {% endif %}
+        >
+            Select item type
+        </option>
+
+        <option value="found"
+            {% if request.GET.type == "found" %}
+                selected
+            {% endif %}
+        >
+            Found Item
+        </option>
+
+        <option value="lost"
+            {% if request.GET.type == "lost" %}
+                selected
+            {% endif %}
+        >
+            Lost Item
+        </option>
+
+    </select>
+</div>
+
+
+
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" name="title" required>
+            </div>
+
+            <div class="form-group">
+                <label>Description</label>
+                <textarea name="description" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Location</label>
+                <input type="text" name="location" required>
+            </div>
+
+            <div class="form-group">
+                <label>Category</label>
+                <select name="category">
+                    <option value="electronics">Electronics</option>
+                    <option value="clothes">Clothes</option>
+                    <option value="documents">Documents</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Photos</label>
+                <input type="file" name="images" multiple>
+            </div>
+
+            <button class="submit-btn">
+                Submit Item
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}

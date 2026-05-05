@@ -1,0 +1,40 @@
+/* HEADER */
+#header {
+    background: #0f2f33 !important;
+}
+
+#header h1 a {
+    color: #ffffff !important;
+}
+
+/* TABLE HEADER */
+thead th {
+    background: #1e4d52 !important;
+    color: white !important;
+}
+
+/* BUTTONS */
+.button,
+input[type=submit],
+.submit-row input {
+    background: #3aa6a0 !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 6px 12px !important;
+}
+
+.button:hover {
+    background: #2d8b86 !important;
+}
+
+/* LINKS */
+a {
+    color: #3aa6a0 !important;
+}
+
+/* FILTER BOX */
+#changelist-filter {
+    background: #f4f9f9 !important;
+    border-radius: 10px;
+    padding: 10px;
+}
